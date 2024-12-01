@@ -181,9 +181,12 @@
                     <div id="editImageContainer">
                         <p>Hình ảnh hiện tại:</p>
                         <div id="">
-                            <div th:each="image : ${product.imageURL}">
-                                <img id="editImagePreview" th:src="@{http://localhost:8080/images/{image}(image=${image})}" alt="Hình ảnh sản phẩm" class="image-preview" style="max-width: 300px; max-height: 300px; margin-right: 10px;" />
-
+                            <div>
+                                <img id="editImagePreview"
+                                     th:src="@{http://localhost:8080/images/{image}(image=${product.imageURL[0]})}"
+                                     alt="Hình ảnh sản phẩm"
+                                     class="image-preview"
+                                     style="max-width: 300px; max-height: 300px; margin-right: 10px;" />
                             </div>
                         </div>
                     </div>

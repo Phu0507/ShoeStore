@@ -142,12 +142,13 @@
 
                 <div class="col-md-2">
                     <label>Hình ảnh sản phẩm</label>
-                    <th:block th:each="image : ${product.imageURL}">
-                        <img th:src="@{http://localhost:8080/images/{image}(image=${image})}" alt="Hình ảnh sản phẩm"
+                    <th:block th:if="${product.imageURL != null and product.imageURL.size() > 0}">
+                        <img th:src="@{http://localhost:8080/images/{image}(image=${product.imageURL[0]})}"
+                             alt="Hình ảnh sản phẩm"
                              style="width:100%; height:auto; border:1px solid #ccc; padding:5px;" />
                     </th:block>
-
                 </div>
+
             </div>
         </div>
     </div>
